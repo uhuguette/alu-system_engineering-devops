@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Update and install Nginx
+sudo apt update
+sudo apt install -y nginx
+
+# Make sure Nginx is running
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+# Backup default config
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+# Use sed to replace or add redirect for /redirect_me
+# Redirecting to YouTube as an example
+REDIRECT_URL="https://www.youtube.com/watch?v=QH2-TGUlwu4"
+
+sudo sed -i '/server_name _;/a \
+    location /redirect_me {\
+        return 301 '"$REDIRECT_URL"';\
+    }' /etc/nginx/sites-available/default
+
+# Test Nginx configuration
+sudo nginx -t
+
+# Reload Nginx to apply changes
+sudo systemctl reload nginx
+
+echo "Nginx is configured. /redirect_me now redirects to $REDIRECT_URL"
