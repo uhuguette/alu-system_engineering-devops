@@ -14,11 +14,7 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.ba
 # Redirecting to YouTube as an example
 REDIRECT_URL="https://www.youtube.com/watch?v=QH2-TGUlwu4"
 
-sudo sed -i '/server_name _;/a \
-    location /redirect_me {\
-        return 301 '"$REDIRECT_URL"';\
-    }' /etc/nginx/sites-available/default
-
+sudo sed -i "/server_name _;/a location /redirect_me { return 301 $REDIRECT_URL; }" /etc/nginx/sites-available/default
 # Test Nginx configuration
 sudo nginx -t
 
