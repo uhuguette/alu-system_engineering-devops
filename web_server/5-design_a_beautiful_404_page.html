@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404 - Lost in Space</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 120px;
+            margin: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h2 {
+            font-weight: 300;
+            margin-top: -20px;
+        }
+
+        p {
+            opacity: 0.8;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff4757;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Oops! You're lost in space 🚀</h2>
+        <p>The page you're looking for doesn't exist.</p>
+        <p><strong>Ceci n'est pas une page</strong></p>
+
+        <a href="/" class="btn">Go Back Home</a>
+
+        <footer>
+            © 2026 Your Web Server Project
+        </footer>
+    </div>
+</body>
+</html>
