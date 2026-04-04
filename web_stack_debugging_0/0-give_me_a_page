@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-# you just have to restart apache
-sudo service apache2 restart
+apt-get update
+apt-get install -y apache2
+echo "Hello Holberton" > /var/www/html/index.html
+service apache2 start
+echo "apache2 is running"
